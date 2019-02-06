@@ -39,9 +39,6 @@ $(NAME): $(OBJ)
 	@ar rc $(NAME) $(OBJ)
 	@echo "${GREEN}$(NAME) was created ${NC}"
 
-libftprintf.a:
-	$(MAKE) -C ft_printf all
-
 %.o: %.c
 	@gcc $(FLAGS) -c $(addprefix -I,$(INCLUDES)) $< -o $@
 
