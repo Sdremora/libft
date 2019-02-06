@@ -6,7 +6,7 @@
 /*   By: sdremora <sdremora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 12:18:26 by sdremora          #+#    #+#             */
-/*   Updated: 2019/02/06 12:57:24 by sdremora         ###   ########.fr       */
+/*   Updated: 2019/02/06 15:57:20 by sdremora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,7 @@ int	main(void)
 	printf("%s -> index = %d\n", str, ft_str_last_n_indexof(str, 2, '1'));
 	str = ft_strdup("1132156");
 	printf("%s -> index = %d\n", str, ft_str_last_n_indexof(str, 3, '1'));
+
+	ft_printf("Hello Andrew!\n");
 
 }

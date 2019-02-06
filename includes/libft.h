@@ -6,7 +6,7 @@
 /*   By: sdremora <sdremora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 19:03:49 by sdremora          #+#    #+#             */
-/*   Updated: 2019/02/06 11:47:00 by sdremora         ###   ########.fr       */
+/*   Updated: 2019/02/06 15:02:05 by sdremora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <string.h>
 # include <wchar.h>
 # include "get_next_line.h"
+# include "ft_printf.h"
 
 typedef struct	s_list
 {
@@ -90,21 +91,20 @@ void			ft_lstreverse(t_list **lst);
 t_list			*ft_lst_attach(void const *content, size_t content_size);
 char			*ft_get_bits(void *data, int data_bytes_count);
 void			*ft_free(int count_param, ...);
-
 int				ft_wchar_get_utf8_strlen(wchar_t *w_str);
 int				ft_wchar_get_utf8_size(unsigned int symbol);
 int				ft_wchar_to_utf8(unsigned int symbol, char *buf);
 int				ft_wchar_str_to_utf8(wchar_t *w_str, char **str);
-
 int				ft_str_indexof_str(const char *haystack, const char *needle);
 int				ft_str_indexof(const char *str, int c);
 int				ft_str_n_indexof(const char *str, int len, int c);
 int				ft_str_last_indexof(const char *str, int c);
 int				ft_str_last_n_indexof(const char *str, int n, int c);
-
 int				ft_str_put(char *str, size_t index, char chr);
 void			ft_str_reverse(char *str);
 void			ft_str_chrset(char *line, int c, int start, int len);
 void			ft_str_swap(char *str, int pos1, int pos2);
+char			*ft_itoa_unsize_base(size_t dec_num, int base);
+void			ft_str_toupper(char *str);
 
 #endif
