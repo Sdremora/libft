@@ -34,6 +34,9 @@ all: $(NAME)
 
 debug: fclean add_flags all
 
+test:
+	gcc -lft -L. test.c -o test.out -I$(INCLUDES)
+
 add_flags:
 	$(eval FLAGS += $(DEBUG_FLAGS))
 
