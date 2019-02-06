@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_swap.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdremora <sdremora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/02 22:54:32 by sdremora          #+#    #+#             */
-/*   Updated: 2019/02/06 10:55:02 by sdremora         ###   ########.fr       */
+/*   Created: 2019/02/06 11:11:17 by sdremora          #+#    #+#             */
+/*   Updated: 2019/02/06 12:05:09 by sdremora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*
+**	Меняет местами символы в строке.
+*/
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void		ft_str_swap(char *str, int pos1, int pos2)
 {
-	unsigned char	*str1;
-	unsigned char	*str2;
-	size_t			i;
+	char	temp;
 
-	str1 = (char unsigned *)dst;
-	str2 = (char unsigned *)src;
-	if (!dst && !src)
-		return (dst);
-	i = 0;
-	while (i < n)
+	if (pos1 != pos2)
 	{
-		str1[i] = str2[i];
-		i++;
+		temp = str[pos1];
+		str[pos1] = str[pos2];
+		str[pos2] = temp;
 	}
-	return (dst);
 }

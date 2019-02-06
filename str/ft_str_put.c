@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_put.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdremora <sdremora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/02 22:54:32 by sdremora          #+#    #+#             */
-/*   Updated: 2019/02/06 10:55:02 by sdremora         ###   ########.fr       */
+/*   Created: 2019/01/30 14:03:20 by sdremora          #+#    #+#             */
+/*   Updated: 2019/02/06 11:57:35 by sdremora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
-{
-	unsigned char	*str1;
-	unsigned char	*str2;
-	size_t			i;
+/*
+**	Вставляет чар в строку, раздвигая её, но не малоча.
+**	Если переданный индекс невалидный вернет -1
+*/
 
-	str1 = (char unsigned *)dst;
-	str2 = (char unsigned *)src;
-	if (!dst && !src)
-		return (dst);
-	i = 0;
-	while (i < n)
+int		ft_str_put(char *str, size_t index, char chr)
+{
+	size_t	len;
+	size_t	i;
+
+	len = ft_strlen(str);
+	if (index >= len)
+		return (-1);
+	i = len - 1;
+	while (i >= index)
 	{
-		str1[i] = str2[i];
-		i++;
+		str[i + 1] = str[i];
+		i--;
 	}
-	return (dst);
+	str[index] = chr;
+	return (0);
 }

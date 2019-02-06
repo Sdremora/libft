@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_reverse.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdremora <sdremora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/02 22:54:32 by sdremora          #+#    #+#             */
-/*   Updated: 2019/02/06 10:55:02 by sdremora         ###   ########.fr       */
+/*   Created: 2019/01/30 16:25:11 by sdremora          #+#    #+#             */
+/*   Updated: 2019/02/06 12:04:15 by sdremora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
-{
-	unsigned char	*str1;
-	unsigned char	*str2;
-	size_t			i;
+/*
+**	Разворачивает строку.
+**	12345 -> 54321
+*/
 
-	str1 = (char unsigned *)dst;
-	str2 = (char unsigned *)src;
-	if (!dst && !src)
-		return (dst);
-	i = 0;
-	while (i < n)
+void	ft_str_reverse(char *str)
+{
+	size_t	left;
+	size_t	right;
+	char	temp;
+
+	if (str == NULL)
+		return ;
+	left = 0;
+	right = ft_strlen(str) - 1;
+	while (left < right)
 	{
-		str1[i] = str2[i];
-		i++;
+		temp = str[left];
+		str[left] = str[right];
+		str[right] = temp;
+		left++;
+		right--;
 	}
-	return (dst);
 }

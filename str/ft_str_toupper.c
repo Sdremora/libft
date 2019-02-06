@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_toupper.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdremora <sdremora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/02 22:54:32 by sdremora          #+#    #+#             */
-/*   Updated: 2019/02/06 10:55:02 by sdremora         ###   ########.fr       */
+/*   Created: 2019/02/06 11:12:06 by sdremora          #+#    #+#             */
+/*   Updated: 2019/02/06 12:08:26 by sdremora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
-{
-	unsigned char	*str1;
-	unsigned char	*str2;
-	size_t			i;
+/*
+**	Переводит строчные буквы в строке на заглавные.
+**	все остальные символы (не буквы) оставляет без изменений.
+**	нулевую строку игнорирует.
+*/
 
-	str1 = (char unsigned *)dst;
-	str2 = (char unsigned *)src;
-	if (!dst && !src)
-		return (dst);
-	i = 0;
-	while (i < n)
+void		ft_str_toupper(char *str)
+{
+	size_t	n;
+
+	n = 0;
+	if (str == NULL)
+		return ;
+	while (str[n])
 	{
-		str1[i] = str2[i];
-		i++;
+		if (str[n] >= 'a' && str[n] <= 'z')
+			str[n] = (str[n] - 32);
+		n++;
 	}
-	return (dst);
 }
